@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WONTAN - La Guinée à portée de main</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7f5;color:#17251d}
+header{background:#087b43;color:white;padding:25px 18px;border-radius:0 0 22px 22px}
+header h1{font-size:30px;margin:0}
+header p{margin-bottom:0}
+main{padding:18px}
+input{width:100%;padding:15px;border:1px solid #ddd;border-radius:12px;font-size:16px;margin:12px 0}
+h2{font-size:21px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:white;padding:20px 12px;border-radius:14px;text-align:center;box-shadow:0 2px 8px #0000000d}
+.card span{font-size:30px}
+.card h3{font-size:15px;margin-bottom:5px}
+.card p{font-size:12px;color:#667}
+footer{text-align:center;padding:25px;color:#667}
+</style>
+</head>
+<body>
+<header>
+<h1>🇬🇳 WONTAN</h1>
+<p>La Guinée à portée de main !</p>
+</header>
+<main>
+<h2>Bienvenue sur WONTAN</h2>
+<p>Découvrez les services et les opportunités près de chez vous.</p>
+<input id="search" placeholder="Rechercher un service..." oninput="filterCards()">
+<h2>Nos catégories</h2>
+<div class="grid" id="categories">
+<div class="card"><span>🛍️</span><h3>Commerce</h3><p>Achats et ventes</p></div>
+<div class="card"><span>💼</span><h3>Emploi</h3><p>Offres et opportunités</p></div>
+<div class="card"><span>🏠</span><h3>Immobilier</h3><p>Maisons et terrains</p></div>
+<div class="card"><span>🚗</span><h3>Transport</h3><p>Déplacements</p></div>
+<div class="card"><span>🍽️</span><h3>Restaurants</h3><p>Où manger</p></div>
+<div class="card"><span>🔧</span><h3>Services</h3><p>Professionnels</p></div>
+</div>
+</main>
+<footer>WONTAN 🇬🇳 — Pour toute la Guinée</footer>
+<script>
+function filterCards(){
+const q=document.getElementById('search').value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
